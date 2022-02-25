@@ -1,16 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <title>Calculus</title>
-</head>
+<html>
+    <head>
+        <title>Calculus</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+<!-- 
+    <div class="overlay">
+        <div class="elements">
+            <img src="coco.png">
+            <h1>Calculus</h1>
+        </div>    
+    </div> -->
+    <div class="start" id="start">
+        <h1>Aujourd'hui tu vas pouvoir apprendre à calculer avec Coco !</h1>
+        <ul class="difficulties" id="difficulties" >
+            <li onclick="myFunction()">Easy</li>
+            <li onclick="myFunction()">Medium</li>
+            <li onclick="myFunction()">Hard</li>
+        </ul>
+    </div>
+    <div class="question-screen" id="question-screen">
+        <p id="question-count"></p>
+        <h2 id="question"></h2>
+        <ul id="possibilities">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="answer-screen">
+        <h2 id="answer-title"></h2>
+        <h4 id="answer-question"></h4>
+        <p id="answer-details"></p>
+        <button id="next">Next question</button>
+    </div>
 
-<body>
-    
+<script src="generateQuestion.js"></script>
+<script src="main.js"></script>
+<script>
+
+TweenMax.to(".overlay h1", 2, {
+    opacity: 0,
+    delay : 0.5,
+    y: -60,
+    ease: Expo.easeInOut
+})
+
+TweenMax.to(".overlay img", 2, {
+    opacity: 0,
+    y: -60,
+    delay : 0.5,
+    ease: Expo.easeInOut
+})
+
+TweenMax.to(".overlay", 2, {
+    delay: 1,
+    top: "-100%",
+    ease: Expo.easeInOut
+})
+
+</script>
 </body>
-
-<script type="text/javascript" src="main.js"></script>
 </html>
