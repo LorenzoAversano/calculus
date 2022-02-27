@@ -4,7 +4,7 @@
         <title>Calculus</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
 <!-- 
@@ -17,9 +17,9 @@
     <div class="start" id="start">
         <h1>Aujourd'hui tu vas pouvoir apprendre à calculer avec Coco !</h1>
         <ul class="difficulties" id="difficulties" >
-            <li onclick="myFunction()">Easy</li>
-            <li onclick="myFunction()">Medium</li>
-            <li onclick="myFunction()">Hard</li>
+            <li onclick="myFunction()" value="1">Easy</li>
+            <li onclick="myFunction()" value="2">Medium</li>
+            <li onclick="myFunction()" value="3">Hard</li>
         </ul>
     </div>
     <div class="question-screen" id="question-screen">
@@ -39,8 +39,8 @@
         <button id="next">Next question</button>
     </div>
 
-<script src="generateQuestion.js"></script>
-<script src="main.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/main.js"></script>
 <script>
 
 TweenMax.to(".overlay h1", 2, {

@@ -1,4 +1,4 @@
-const els = {
+const els = { //Je liste tous les éléments que je veux utiliser et par défaut je les mets à 
     question: null,
     questionCount: null,
     questionScreen: null,
@@ -7,15 +7,16 @@ const els = {
     answerScreen: null,
     possibilities: null,
     answerQuestion: null,
-    nextQuestionBtn: null
+    nextQuestionBtn: null,
+    restart: null
 };
 let question = null;
-let questionNumber = 1;
-let questionNumberTotal = 5;
+let questionNumber = 1; 
+let questionNumberTotal = 5; // On souhaite avoir 5 questions 
 let score = 0;
 
-const init = () => {
-    els.question = document.querySelector('#question');
+const init = () => { //Cette constante me permet de prendre les id que j'ai crée dans ma page HTML
+    els.question = document.querySelector('#question'); 
     els.questionCount = document.querySelector('#question-count');
     els.questionScreen = document.querySelector('#question-screen');
     els.answerTitle = document.querySelector('#answer-title');
@@ -34,7 +35,7 @@ const init = () => {
         giveAnswer(parseInt(target.innerHTML));
     });
 
-    els.nextQuestionBtn.addEventListener('click', () => {
+    els.nextQuestionBtn.addEventListener('click', () => {  
         questionNumber++;
         if (questionNumber <= questionNumberTotal) {
             showNewQuestion();
@@ -61,6 +62,8 @@ const showNewQuestion = () => {
     }).join('');
 };
 
+
+//Cette constante montre la réponse à la question, si l'on a bon à la question on a un message "Good Job".
 const giveAnswer = (userAnswer) => {
     if (userAnswer === question.answer) {
         els.answerTitle.innerHTML = 'Good job!';
@@ -76,10 +79,12 @@ const giveAnswer = (userAnswer) => {
     els.answerScreen.style.display = 'block';
 }
 
-window.onload = init;
+window.onload = init; // Au chargement de la page on commence la fonction
+
 
 
 function myFunction() {
 	document.getElementById("question-screen").style.display = "block";
     document.getElementById("start").style.display = "none";
 }
+
