@@ -8,7 +8,6 @@ const els = { //Je liste tous les éléments que je veux utiliser et par défaut
     possibilities: null,
     answerQuestion: null,
     nextQuestionBtn: null,
-    restart: null
 };
 let question = null;
 let questionNumber = 1; 
@@ -46,8 +45,8 @@ const init = () => { //Cette constante me permet de prendre les id que j'ai cré
             els.answerScreen.style.display = 'block';
             els.nextQuestionBtn.style.display = 'none';
 
-            els.answerTitle.innerHTML = 'Congratulations!';
-            els.answerQuestion.innerHTML = `Your score is: ${score} / ${questionNumberTotal}`;
+            els.answerTitle.innerHTML = 'Fécilitations !';
+            els.answerQuestion.innerHTML = `Ton score est de : ${score} / ${questionNumberTotal}`;
             els.answerDetails.innerHTML = '';
             
         }
@@ -66,14 +65,14 @@ const showNewQuestion = () => {
 //Cette constante montre la réponse à la question, si l'on a bon à la question on a un message "Good Job".
 const giveAnswer = (userAnswer) => {
     if (userAnswer === question.answer) {
-        els.answerTitle.innerHTML = 'Good job!';
+        els.answerTitle.innerHTML = 'Bien joué !';
         els.answerQuestion.innerHTML = '';
         els.answerDetails.innerHTML = '';
         score++;
     } else {
-        els.answerTitle.innerHTML = 'Wrong answer';
+        els.answerTitle.innerHTML = 'Mauvaise réponse ';
         els.answerQuestion.innerHTML = question.title;
-        els.answerDetails.innerHTML = `You said ${userAnswer}. The actual answer was ${question.answer}`;
+        els.answerDetails.innerHTML = `Tu as dis ${userAnswer}. La bonne réponse était  ${question.answer}`;
     }
     els.questionScreen.style.display = 'none';
     els.answerScreen.style.display = 'block';
@@ -87,4 +86,3 @@ function myFunction() {
 	document.getElementById("question-screen").style.display = "block";
     document.getElementById("start").style.display = "none";
 }
-

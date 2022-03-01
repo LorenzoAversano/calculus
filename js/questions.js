@@ -1,24 +1,33 @@
-difficulty = document.getElementById('#difficulties');
+easy = document.getElementById('#easy');
+medium = document.getElementById('#medium');
 //Je crée une constante pour généer une question
 const generateQuestion = () => {
     const question = {};
 
 
-    if (difficulty === "1") {
+    if (easy === "1") {
         var operators = ["+", "-"]; //Je prends différents opérateurs, ici addition, soustraction et multiplication.
+        var operands = [ //On cherche la fonction getRandomInt qui me prends un chiffre au hasard entre 1 et 9
+            getRandomInt(1, 9),
+            getRandomInt(1, 9)
+        ];
     } 
-    else if (difficulty === "2") {
+    else if (medium=== "2") {
         var operators = ["+", "-"];
+        var operands = [ //On cherche la fonction getRandomInt qui me prends un chiffre au hasard entre 1 et 9
+            getRandomInt(50, 59),
+            getRandomInt(51, 99)
+        ];
     }
     else {
-        var operators = ["+", "-","x" ];
+        var operators = ["+", "-", "x" ];
+        var operands = [ //On cherche la fonction getRandomInt qui me prends un chiffre au hasard entre 1 et 9
+            getRandomInt(1, 30),
+            getRandomInt(1, 30)
+        ];
     }
 
     var sOperator = operators[getRandomInt(0, operators.length - 1)]; //Je récupère au hasard un des opéarteurs
-    var operands = [ //On cherche la fonction getRandomInt qui me prends un chiffre au hasard entre 1 et 9
-        getRandomInt(1, 9),
-        getRandomInt(1, 9)
-    ];
 
     //Je crée maintenant ma question qui va être afficher
     
@@ -38,7 +47,7 @@ const generateQuestion = () => {
 var getPossibilities = (answer) => {
     var answers = [answer];
     for (let i = 0; answers.length < 4; i++) { //On ne veut que 4 possibilités 
-        const random = getRandomInt(-8, 81); // Ici on ne veut que des possibilités entre -8 et 81 car avec des chiffres entre 1 et 9 on ne peut pas arriver en dessous de -8 et 81 peu importe le type d'opérateur 
+        const random = getRandomInt(-500, 500);
         if (answers.includes(random) === false) {  
             answers.push(random);
         }
@@ -81,39 +90,3 @@ const getRandomInt = (min, max) => {
 
 
 
-// const getDifficulties = (answer) => {
-//     const answers = [answer];
-//     for (let i = 0; answers.length < 4; i++) {
-//         const random = getRandomInt(-5, 81);
-//         if (answers.includes(random) === false) {
-//             answers.push(random);
-//         }
-//     }
-
-//     answers.sort((a, b) => {
-//         return a - b;
-//     });
-
-//     return answers;
-// };
-
-// const generateQuestionMedium = () => {
-//     const question = {};
-
-//     const operators = ['+', '-', 'x'];
-//     const sOperator = operators[getRandomInt(0, operators.length - 1)];
-//     const operands = [
-//         getRandomInt(5, 20),
-//         getRandomInt(5, 20)
-//     ];
-
-    
-//     question.title = `${operands[0]} ${sOperator} ${operands[1]}`;
-//     const answer = getAnswer(operands, sOperator);
-//     question.answer = answer;
-//     question.possibilities = getPossibilities(answer);
-
-//     console.table(question);
-
-//     return question;
-// };
