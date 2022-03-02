@@ -7,19 +7,19 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-    <!-- <div class="overlay">
+    <div class="overlay">
         <div class="elements">
             <img src="coco.png">
             <h1>Calculus</h1>
         </div>    
-    </div> -->
+    </div>
     <div class="start" id="start">
         <h1>Choisis une difficulté !</h1>
-        <ul class="difficulties" id="difficulties" >
-            <li onclick="myFunction()" class="easy" id="easy" value="1">Facile</li>
-            <li onclick="myFunction()" class="medium" id="medium" value="2">Moyen</li>
-            <li onclick="myFunction()" class="hard" id="hard" value="3">Difficile</li>
-        </ul>
+        <div class="difficulties" >
+            <button value="1" onclick="difficulty(this.id)" id="easy" class="btn difficulty">Facile</button>
+            <button value="2" onclick="difficulty(this.id)" id="medium" class="btn difficulty">Moyen</button>
+            <button value="3" onclick="difficulty(this.id)" id="hard" class="btn difficulty">Difficile</button>
+        </div>
     </div>
     <div class="question-screen" id="question-screen">
         <p id="question-count"></p>
@@ -35,7 +35,9 @@
         <h2 id="answer-title"></h2>
         <h4 id="answer-question"></h4>
         <p id="answer-details"></p>
-        <button id="next">Prochaine Question</button>
+        <button id="easy" onclick="difficulty(this.id)" class="btn nexte" >Prochaine Question</button>
+        <button id="medium" onclick="difficulty(this.id)" class="btn nextm" >Prochaine Question</button>
+        <button id="hard" onclick="difficulty(this.id)" class="btn nexth">Prochaine Question</button>
     </div>
 
 <script src="js/questions.js"></script>
