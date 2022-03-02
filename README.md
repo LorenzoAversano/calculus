@@ -40,7 +40,9 @@ La réponse est égale à 64 et les propositions se situeront entre 64+10 et 64-
 <br>
 Pour finir j'ai crée un autre fichier javascript pour gérer tout ce qui me permet d'afficher mes questions, mes réponses, les bouttons ...
 <br>
-<h2> Maintenant c'est à vous de tester ! <h2>
- <br>
-[Jouer](https://calculus-nine.vercel.app/).
+<h2> Maintenant c'est à vous de tester ! </h2>
+
+[Jouer maintenant !](https://calculus-nine.vercel.app/)
+ 
+
 
